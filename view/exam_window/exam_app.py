@@ -1,6 +1,7 @@
 import customtkinter as ctk
 from CTkMessagebox import CTkMessagebox
 
+
 from view.frame_main import FrameMain
 
 
