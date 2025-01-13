@@ -36,7 +36,7 @@ class App(ctk.CTk):
         self.frame_main.pack(expand=True, fill="both")
 
     def open_exam_app(self):
-        if self.exam_window is None or not self.exam_window .winfo_exists():
+        if self.exam_window is None or not self.exam_window.winfo_exists():
             self.exam_window = ExamWindowApp(self)  # create window if its None or destroyed
         else:
-            self.exam_window .focus()
+            self.exam_window.focus()

@@ -7,8 +7,8 @@ class FrameMenu(ctk.CTkFrame):
         super().__init__(master, **kwargs)
         self.master = master
         self.ico_arrow = ctk.CTkImage(light_image=Image.open("static/img/arrow_back.png"),
-                                        dark_image=Image.open("static/img/arrow_back.png"),
-                                        size=(130, 35))
+                                      dark_image=Image.open("static/img/arrow_back.png"),
+                                      size=(130, 35))
         self.configure()
 
         self.label_main = ctk.CTkLabel(self,
