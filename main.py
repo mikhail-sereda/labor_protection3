@@ -1,6 +1,15 @@
+from model import db_helper
+from model import Base
+
 from view.app import App
-from tkinter import *
+
+def create_database():
+    Base.metadata.drop_all(db_helper.engine)
+    Base.metadata.create_all(db_helper.engine)
 
 
-app = App()
-app.mainloop()
+
+if __name__ == '__main__':
+    create_database()
+    app = App()
+    app.mainloop()
