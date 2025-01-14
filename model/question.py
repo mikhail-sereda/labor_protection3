@@ -1,6 +1,6 @@
 from typing import List
 
-
+from sqlalchemy import ForeignKey
 from sqlalchemy.orm import Mapped, mapped_column, relationship
 
 from model import Base
@@ -12,6 +12,7 @@ class Question(Base):
     questionsID: Mapped[int] = mapped_column(primary_key=True)
     questionsText: Mapped[str]
 
+    categoryID: Mapped[int] = mapped_column(ForeignKey("categories.categoryID"))
     category: Mapped["Category"] = relationship(back_populates="questions")
 
     answers: Mapped[List["Answer"]] = relationship(back_populates="question", cascade="all, delete-orphan")
