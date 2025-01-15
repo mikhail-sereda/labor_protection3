@@ -13,3 +13,8 @@ class Category(Base):
 
     questions: Mapped[List["Question"]] = relationship(
         back_populates="category", cascade="all, delete-orphan")
+
+    professions: Mapped[List["Profession"]] = relationship(
+        back_populates="categories", secondary="professions_categories")
+
+
