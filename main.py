@@ -1,5 +1,5 @@
-from model import db_helper
-from model import Base
+from database.model import db_helper
+from database.model import Base
 
 from view.app import App
 

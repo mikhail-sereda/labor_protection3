@@ -1,7 +1,7 @@
 from typing import List
 from sqlalchemy.orm import Mapped, mapped_column, relationship
 
-from model import Base
+from database.model import Base
 
 
 class Category(Base):

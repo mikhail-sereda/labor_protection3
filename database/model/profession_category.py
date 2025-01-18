@@ -1,7 +1,7 @@
 from sqlalchemy import ForeignKey
-from sqlalchemy.orm import Mapped, mapped_column, relationship
+from sqlalchemy.orm import Mapped, mapped_column
 
-from model import Base
+from database.model import Base
 
 
 class ProfessionCategory(Base):
