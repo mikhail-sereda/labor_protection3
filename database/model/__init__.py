@@ -1,4 +1,5 @@
 __all__ = ("Base",
+           "User",
            "Question",
            "Category",
            "DataHelper",
@@ -8,6 +9,7 @@ __all__ = ("Base",
            "db_helper")
 
 from .base import Base
+from .user import User
 from .question import Question
 from .category import Category
 from .answer import Answer

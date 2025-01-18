@@ -12,3 +12,5 @@ class Profession(Base):
 
     categories: Mapped[List["Category"]] = relationship(
         back_populates="professions", secondary="professions_categories")
+
+    users: Mapped[List["User"]] = relationship(back_populates="profession")
