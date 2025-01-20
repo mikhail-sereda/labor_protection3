@@ -12,7 +12,7 @@ def check_profession(name: str) -> bool:
     session = db_helper.get_session()
     stmt = select(Profession).where(Profession.professionName == name)
     result_check = session.scalar(stmt)
-    return bool(result_check)
+    return result_check
 
 
 def db_add_profession(name: str) -> Profession:
@@ -22,8 +22,11 @@ def db_add_profession(name: str) -> Profession:
     :return:
     """
     session = db_helper.get_session()
-    if not check_profession(name):
+    profession = check_profession(name)
+    if not profession:
         profession = Profession(professionName=name)
         session.add(profession)
         session.commit()
-        return profession
+
+    return profession
+
