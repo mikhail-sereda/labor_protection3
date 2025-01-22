@@ -1,8 +1,7 @@
 import customtkinter as ctk
 from CTkMessagebox import CTkMessagebox
 
-
-from view.frame_main import FrameMain
+from view.exam_window.farme_registration import FrameRegistration
 
 
 class ExamWindowApp(ctk.CTkToplevel):
@@ -11,10 +10,16 @@ class ExamWindowApp(ctk.CTkToplevel):
         # self.geometry("400x300")
         self.geometry(f"{self.winfo_screenwidth()}x{self.winfo_screenheight()}+0+0")
         self.attributes("-topmost", True)
+        self.title = "Экзамен по охране труда"
         self.protocol("WM_DELETE_WINDOW", self.show_warning)
 
-        self.label = ctk.CTkLabel(self, text="ToplevelWindow")
-        self.label.pack()
+        self.frame_registration = None
+
+        self.view_frame_registration()
+
+    def view_frame_registration(self):
+        self.frame_registration = FrameRegistration(self)
+        self.frame_registration.pack(expand=True, fill="both")
 
     def show_warning(self):
         # Show some retry/cancel warnings
@@ -28,8 +33,6 @@ class ExamWindowApp(ctk.CTkToplevel):
             self.exit_exam()
 
     def exit_exam(self):
-        self.message = CTkMessagebox
-
         self.destroy()
         self.master.frame_main.button_start.configure(state="normal")
         self.master.frame_main.button_settings.configure(state="normal")
