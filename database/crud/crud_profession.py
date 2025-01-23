@@ -30,3 +30,11 @@ def db_add_profession(name: str) -> Profession:
 
     return profession
 
+
+def db_get_all_profession():
+    session = db_helper.get_session()
+    stmt = select(Profession)
+    result_check = session.scalars(stmt)
+    return result_check
+
+
