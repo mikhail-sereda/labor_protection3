@@ -2,6 +2,7 @@ import customtkinter as ctk
 from CTkMessagebox import CTkMessagebox
 
 from view.exam_window.farme_registration import FrameRegistration
+from view.exam_window.frame_test import FrameTest
 
 
 class ExamWindowApp(ctk.CTkToplevel):
@@ -19,6 +20,10 @@ class ExamWindowApp(ctk.CTkToplevel):
 
     def view_frame_registration(self):
         self.frame_registration = FrameRegistration(self)
+        self.frame_registration.pack(expand=True, fill="both")
+
+    def view_frame_test(self):
+        self.frame_registration = FrameTest(self)
         self.frame_registration.pack(expand=True, fill="both")
 
     def show_warning(self):
