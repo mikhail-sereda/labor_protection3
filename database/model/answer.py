@@ -14,4 +14,4 @@ class Answer(Base):
     question: Mapped["Question"] = relationship(back_populates="answers")
 
     def __repr__(self) -> str:
-        return f"Question(id={self.questionsID!r}, questionsText={self.questionsText!r}, category={self.category!r})"
+        return f"answerID={self.answerID!r}, answersText={self.answersText!r}, answerCorrect={self.answerCorrect!r})"
