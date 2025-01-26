@@ -12,9 +12,9 @@ class Category(Base):
     categoryDesc: Mapped[str]
 
     questions: Mapped[List["Question"]] = relationship(
-        back_populates="category", cascade="all, delete-orphan")
+        back_populates="category", cascade="all, delete-orphan"
+    )
 
     professions: Mapped[List["Profession"]] = relationship(
-        back_populates="categories", secondary="professions_categories")
-
-
+        back_populates="categories", secondary="professions_categories"
+    )

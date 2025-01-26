@@ -10,7 +10,8 @@ answ = [
     {"answersText": "техт ответа неправильный1", "answerCorrect": False},
     {"answersText": "техт ответа неправильный2", "answerCorrect": False},
     {"answersText": "техт ответа неправильный3", "answerCorrect": False},
-    {"answersText": "техт ответа правильный1", "answerCorrect": True}]
+    {"answersText": "техт ответа правильный1", "answerCorrect": True},
+]
 
 
 def db_create_question(question: dict):
@@ -47,8 +48,9 @@ def db_delete_question(question_id):
     :return:
     """
     session: Session = db_helper.get_session()
-    question = session.scalar(select(Question).
-                              where(Question.questionsID == question_id))
+    question = session.scalar(
+        select(Question).where(Question.questionsID == question_id)
+    )
     session.delete(question)
     session.commit()
 

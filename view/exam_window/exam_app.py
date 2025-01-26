@@ -28,11 +28,16 @@ class ExamWindowApp(ctk.CTkToplevel):
 
     def show_warning(self):
         # Show some retry/cancel warnings
-        self.msg = CTkMessagebox(title="Завершить экзамен?", message="Закрыть окно экзамена?\n"
-                                                                     "Незавершённая проверка знаний не будет "
-                                                                     "сохранена!\n"
-                                                                     "Выйти из экзамена?",
-                                 icon="warning", option_1="Нет", option_2="Выйти")
+        self.msg = CTkMessagebox(
+            title="Завершить экзамен?",
+            message="Закрыть окно экзамена?\n"
+            "Незавершённая проверка знаний не будет "
+            "сохранена!\n"
+            "Выйти из экзамена?",
+            icon="warning",
+            option_1="Нет",
+            option_2="Выйти",
+        )
 
         if self.msg.get() == "Выйти":
             self.exit_exam()

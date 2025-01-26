@@ -10,6 +10,7 @@ class Answer(Base):
     answerID: Mapped[int] = mapped_column(primary_key=True)
     answersText: Mapped[str]
     answerCorrect: Mapped[bool]
+
     questionID: Mapped[int] = mapped_column(ForeignKey("questions.questionsID"))
     question: Mapped["Question"] = relationship(back_populates="answers")
 

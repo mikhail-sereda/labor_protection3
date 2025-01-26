@@ -9,7 +9,7 @@ def create_database():
     Base.metadata.create_all(db_helper.engine)
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     create_database()
     app = App()
     app.mainloop()
