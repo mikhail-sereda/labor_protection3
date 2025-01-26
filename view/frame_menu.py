@@ -34,7 +34,7 @@ class FrameMenu(ctk.CTkFrame):
             fg_color="#63c0f2",
             width=350,
             height=50,
-            command=None,
+            command=self.put_frame_questions,
         )
         self.button_archive_setting = ctk.CTkButton(
             self,
@@ -66,6 +66,11 @@ class FrameMenu(ctk.CTkFrame):
         self.button_questions_setting.pack(expand=True, ipadx=20, ipady=15)
         self.button_archive_setting.pack(expand=True, ipadx=20, ipady=15)
         self.button_back_setting.pack(expand=True, ipadx=20, ipady=15)
+
+    def put_frame_questions(self):
+        self.master.view_frame_questions()
+        # self.master.
+        self.destroy()
 
     def back(self):
         self.master.view_frame_main()

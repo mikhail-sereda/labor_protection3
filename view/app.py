@@ -7,6 +7,7 @@ from PIL import Image
 from view.exam_window.exam_app import ExamWindowApp
 from view.frame_main import FrameMain
 from view.frame_menu import FrameMenu
+from view.frame_questions import FrameQuestions
 
 
 class App(ctk.CTk):
@@ -27,7 +28,12 @@ class App(ctk.CTk):
         self.exam_window = None
         self.frame_main = None
         self.frame_menu = None
+        self.frame_questions = None
         self.view_frame_main()
+
+    def view_frame_questions(self):
+        self.frame_questions = FrameQuestions(self)
+        self.frame_questions.pack(expand=True, fill="both")
 
     def view_frame_main(self):
         self.frame_main = FrameMain(self)
