@@ -9,6 +9,7 @@ class Category(Base):
 
     categoryID: Mapped[int] = mapped_column(primary_key=True)
     categoryName: Mapped[str]
+    categoryDesc: Mapped[str]
 
     questions: Mapped[List["Question"]] = relationship(
         back_populates="category", cascade="all, delete-orphan")
