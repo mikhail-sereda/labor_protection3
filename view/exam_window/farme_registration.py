@@ -8,14 +8,12 @@ class FrameRegistration(ctk.CTkFrame):
     def __init__(self, master, **kwargs):
         super().__init__(master, **kwargs)
         self.master = master
-        self.ico_arrow = ctk.CTkImage(light_image=Image.open("static/img/arrow_back.png"),
-                                      dark_image=Image.open("static/img/arrow_back.png"),
-                                      size=(130, 35))
+        # self.ico_arrow = ctk.CTkImage(light_image=Image.open("static/img/arrow_back.png"),
+        #                               dark_image=Image.open("static/img/arrow_back.png"),
+        #                               size=(130, 35))
         self.ico_instructions = ctk.CTkImage(light_image=Image.open("static/img/question_mark.png"),
                                              dark_image=Image.open("static/img/question_mark.png"),
                                              size=(40, 40))
-        # self.configure(fg_color="red")
-        # self.grid_rowconfigure(1, weight=1)
         self.grid_columnconfigure(1, weight=1)
         self.variable_profession = ctk.Variable()
         self.list_profession = [i.professionName for i in db_get_all_profession()]
@@ -59,7 +57,7 @@ class FrameRegistration(ctk.CTkFrame):
         self.master.view_frame_test()
         self.destroy()
         print(self.combo_profession.get())
-        print(self.entry_user_first_name.get())dfgdf
+        print(self.entry_user_first_name.get())
 
     def back(self):
         self.destroy()
