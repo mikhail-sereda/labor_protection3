@@ -11,7 +11,7 @@ class ExamWindowApp(ctk.CTkToplevel):
         # self.geometry("400x300")
         self.geometry(f"{self.winfo_screenwidth()}x{self.winfo_screenheight()}+0+0")
         self.attributes("-topmost", True)
-        self.title = "Экзамен по охране труда"
+        self.title("Экзамен по охране труда")
         self.protocol("WM_DELETE_WINDOW", self.show_warning)
 
         self.frame_registration = None
