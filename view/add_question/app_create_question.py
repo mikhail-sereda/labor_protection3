@@ -9,7 +9,7 @@ from view.exam_window.frame_test import FrameTest
 class AppCreateQuestion(ctk.CTkToplevel):
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
-        self.geometry("400x300")
+        self.geometry("900x600")
         # self.geometry(f"{self.winfo_screenwidth()}x{self.winfo_screenheight()}+0+0")
         self.attributes("-topmost", True)
         self.title("Редактор вопроса")
