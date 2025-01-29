@@ -23,12 +23,14 @@ class FrameCreateQuestion(ctk.CTkFrame):
 
         self.answers = [
             {"text": "первый", "bu": True, "id": 1},
-            {"text": "второйj", "bu": True, "id": 1},
+            {"text": "второйj", "bu": False, "id": 1},
+            {"text": "33333j", "bu": False, "id": 1},
+            {"text": "444444", "bu": True, "id": 1},
         ]
 
         self.frame_choice = ctk.CTkFrame(self)  #  fg_color="red"
         self.frame_add_question = ctk.CTkFrame(self)
-        self.frame_add_answers = ctk.CTkScrollableFrame(self)
+        self.frame_add_answers = ctk.CTkScrollableFrame(self, orientation="vertical")
         self.frame_add_answers.grid_columnconfigure(0, weight=1)
         self.frame_add_answers.grid_columnconfigure(1, weight=30)
         self.frame_add_answers.grid_columnconfigure(2, weight=1)
@@ -80,7 +82,8 @@ class FrameCreateQuestion(ctk.CTkFrame):
 
     def put_widget_answer(self):
         for answer in range(len(self.answers)):
-            chek = ctk.CTkCheckBox(self.frame_add_answers, text="", width=0).grid(
+            self.checkbox_var = ctk.IntVar(value=self.answers[answer]["bu"])
+            chek = ctk.CTkCheckBox(self.frame_add_answers, text="", width=0, variable=self.checkbox_var).grid(
                 column=0, row=answer, padx=5, pady=5
             )
             self.text = ctk.CTkTextbox(self.frame_add_answers, height=70)
@@ -95,5 +98,11 @@ class FrameCreateQuestion(ctk.CTkFrame):
                 padx=5,
                 pady=5,
             )
+        self.button_add_answer_form = ctk.CTkButton(self.frame_add_answers, text="Добавить вариант ответа", height=50)
+        self.button_add_answer_form.grid(column=0,
+                                  row=len(self.answers) + 1,
+                                  columnspan=3,
+                                  padx=5,
+                                  pady=5, )
         for i in self.frame_add_answers.winfo_children():
             print(i.__dict__)
